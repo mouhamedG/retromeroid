@@ -4,6 +4,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-height: 300vh; /* Hauteur minimale du body égale à la hauteur de la fenêtre du navigateur */
+  padding: 20px; /* Ajoute de l'espace intérieur autour du contenu du body */
 }
 
 /* Styles pour le header */
@@ -130,4 +132,151 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+
+/* Conteneur pour l'image et le formulaire */
+.gameboy-color-content {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; /* Aligne les éléments en haut */
+  gap: 40px; /* Espace entre l'image et le formulaire */
+  margin-bottom: 20px; /* Espace en bas du conteneur */
+}
+
+/* Style de l'image du Gameboy */
+.gameboy-color-content img {
+  max-width: 20%;
+  height: auto;
+  border: 2px solid #ddd; /* Bordure pour l'image */
+  border-radius: 8px; /* Coins arrondis pour l'image */
+}
+
+/* Style du formulaire de configuration */
+.gameboy-color-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligne le formulaire à gauche */
+  max-width: 400px; /* Largeur maximale du formulaire */
+  text-align: left;
+}
+
+
+
+/* Style pour les sections avec cadre et coins arrondis */
+.gameboy-color-sections section {
+  border: 2px solid #333; /* Bordure autour de la section */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px; /* Espace intérieur */
+  margin-bottom: 20px; /* Espace entre les sections */
+  background-color: #f9f9f9; /* Couleur de fond pour les sections */
+  cursor: pointer; /* Changer le curseur pour indiquer que la section est cliquable */
+}
+
+.gameboy-color-sections h2 {
+  margin-top: 0; /* Enlever la marge en haut des titres */
+  color: #333; /* Couleur du texte du titre */
+}
+
+.gameboy-color-sections p {
+  line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+  color: #666; /* Couleur du texte du paragraphe */
+}
+
+/* Style pour rendre le texte toujours visible */
+.gameboy-color-sections section p {
+  display: block; /* Assurez-vous que le paragraphe est affiché */
+}
+
+/* Style pour les sections actives (cliquées) */
+.gameboy-color-sections section.active {
+  background-color: #e0e0e0; /* Couleur de fond légèrement différente pour les sections actives */
+}
+
+/* Style de la section */
+.inspiration {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Conteneur des images */
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+}
+
+/* Contrôles de carousel */
+.carousel-controls {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-controls input {
+  display: none;
+}
+
+.carousel-controls .control-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-controls .control-dot:hover {
+  background-color: #717171;
+}
+
+/* Animation pour les images */
+#control1:checked ~ .carousel .carousel-images {
+  transform: translateX(0%);
+}
+
+#control2:checked ~ .carousel .carousel-images {
+  transform: translateX(-100%);
+}
+
+#control3:checked ~ .carousel .carousel-images {
+  transform: translateX(-200%);
+}
+
+#control4:checked ~ .carousel .carousel-images {
+  transform: translateX(-300%);
+}
+
+#control5:checked ~ .carousel .carousel-images {
+  transform: translateX(-400%);
+}
+
+/* Met à jour l'état des points de contrôle */
+#control1:checked ~ .carousel-controls label[for="control1"],
+#control2:checked ~ .carousel-controls label[for="control2"],
+#control3:checked ~ .carousel-controls label[for="control3"],
+#control4:checked ~ .carousel-controls label[for="control4"],
+#control5:checked ~ .carousel-controls label[for="control5"] {
+  background-color: #717171;
 }
