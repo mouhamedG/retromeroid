@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import GameboyColor from './components/GameboyColor';
+import GameboyAdvance from './components/GameboyAdvance';
+import GameboyAdvanceSP from './components/GameboyAdvanceSP';
+import GameboyDMG from './components/GameboyDMG';
+import PSVitaOLED from './components/PSVitaOLED';
+import Accessories from './components/Accessories';
+import './styles/style.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/gameboy-color" element={<GameboyColor />} />
+        <Route path="/gameboy-advance" element={<GameboyAdvance />} />
+        <Route path="/gameboy-advance-sp" element={<GameboyAdvanceSP />} />
+        <Route path="/gameboy-dmg" element={<GameboyDMG />} />
+        <Route path="/psvita-oled" element={<PSVitaOLED />} />
+        <Route path="/accessories" element={<Accessories />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
